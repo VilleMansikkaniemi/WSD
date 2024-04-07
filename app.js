@@ -3,6 +3,11 @@ import * as feedbacks from "./feedbacks.js";
 
 const app = new Hono();
 
+app.get("/",  (c) => {
+    
+    return c.text("");
+  });
+
 app.get("/feedbacks/1", async (c) => {
     const count = await feedbacks.getFeedbacks(1);
     return c.text(`Feedback 1: ${count}`);
