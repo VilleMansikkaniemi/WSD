@@ -2,7 +2,7 @@ import { Hono } from "https://deno.land/x/hono@v3.7.4/mod.ts";
 import * as feedbacks from "./feedbacks.js";
 
 const app = new Hono();
-
+app.get("/",  (c) => c.text());
 
 app.get("/feedbacks/1", async (c) => {
     const count = await feedbacks.getFeedbacks(1);
